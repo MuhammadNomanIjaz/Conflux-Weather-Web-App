@@ -1,0 +1,72 @@
+/* Dropdown in sidebar */
+.dropdown {
+  position: relative;
+}
+
+.dropdown span {
+  cursor: pointer;
+  display: block;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  background: #21262d;
+  border-radius: 6px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 150px;
+  z-index: 500;
+}
+
+.dropdown-content li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content li:hover {
+  background: #238636;
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Show dropdown when open */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* Light Theme */
+body.light {
+  background: #f5f5f5;
+  color: #111;
+}
+
+body.light .sidebar {
+  background: #e0e0e0;
+}
+
+body.light .current-weather,
+body.light .details {
+  background: #ffffff;
+  color: #111;
+}
+
+body.light .hourly div,
+body.light .weekly div {
+  background: #f0f0f0;
+}
+
+/* 📱 Mobile dropdown fix */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;
+    margin-top: 5px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conflux Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="setting.css" />
+</head>
+<body>
+  <!-- Notification Banner -->
+  <div id="notification" class="notification"></div>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h4>Conflux</h4>
+      <h2>☁️</h2>
+      <nav>
+        <ul>
+          <li onclick="showSection('weather')">Weather</li>
+          <li onclick="showSection('cities')">Cities</li>
+          <li onclick="showSection('map')">Map</li>
+
+          <!-- Settings Dropdown -->
+          <li class="dropdown">
+            <span onclick="toggleDropdown()">⚙️ Settings ▾</span>
+            <ul id="themeDropdown" class="dropdown-content">
+              <li onclick="setTheme('dark')">🌑 Dark Theme</li>
+              <li onclick="setTheme('light')">☀️ Light Theme</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <!-- Weather Section -->
+      <section id="weatherSection" class="page-section active">
+        <div class="search-bar">
+          <input type="text" id="cityInput" placeholder="Search for cities" />
+          <button onclick="getWeather()">Search</button>
+          <button id="locationBtn">Use My Location</button>
+        </div>
+
+        <div class="current-weather">
+          <h1 id="cityName">City</h1>
+          <div class="temp-icon">
+            <img id="currentIcon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" />
+            <h2 id="currentTemp">--°</h2>
+          </div>
+          <p id="condition">Condition</p>
+          <p id="rain">Chance of rain: --%</p>
+        </div>
+
+        <div class="hourly" id="hourlyForecast"></div>
+
+        <div class="details">
+          <p>Real Feel: <span id="feelsLike">--°</span></p>
+          <p>Humidity: <span id="humidity">--%</span></p>
+          <p>Wind: <span id="wind">-- km/h</span></p>
+          <p>UV Index: <span id="uvi">--</span></p>
+        </div>
+
+        <div class="weekly" id="dailyForecast"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="setting.js"></script>
+</body>
+</html>

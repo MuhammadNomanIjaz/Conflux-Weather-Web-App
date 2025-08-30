@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: #fff;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #161b22;
+  width: 80px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav ul li:hover,
+.sidebar nav ul li.active {
+  color: #238636;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #238636;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-bar button:hover {
+  background: #2ea043;
+}
+
+.current-weather {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.temp-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.temp-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.hourly, .weekly {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.hourly div, .weekly div {
+  background: #21262d;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 100px;
+  text-align: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hourly div:hover, .weekly div:hover {
+  background: #238636;
+  transform: translateY(-5px);
+}
+
+.hourly div img,
+.weekly div img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.details {
+  display: flex;
+  gap: 20px;
+  background: #161b22;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* Notification Banner */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #238636;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+/* ------------------------- */
+/* 📱 Mobile Responsive Fixes */
+/* ------------------------- */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .sidebar nav ul {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .sidebar nav ul li {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+  }
+
+  .temp-icon {
+    justify-content: center;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    font-size: 0.7rem;
+    padding: 8px;
+  }
+
+  .sidebar nav ul {
+    flex-wrap: wrap;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+  }
+
+  .search-bar button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .hourly div, .weekly div {
+    min-width: 80px;
+    padding: 8px;
+  }
+}
